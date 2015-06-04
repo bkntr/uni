@@ -1,0 +1,1921 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\usepackage{tikz}
+\usetikzlibrary{automata,positioning}
+\tikzset{initial text={}}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language hebrew
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1in
+\topmargin 1in
+\rightmargin 1in
+\bottommargin 1in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip smallskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\sse}{\subseteq}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\eps}{\varepsilon}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\os}[2]{\overset{#2}{#1}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\lang}[1]{\mathscr{L}\left(#1\right)}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\pr}[1]{#1^{\prime}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\derives}{\overset{*}{\Rightarrow}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+שאלה
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $L_{M,w}\in R$
+\end_inset
+
+.
+ ישנן
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+אפשרויות, אם 
+\begin_inset Formula $M$
+\end_inset
+
+ מקבלת את 
+\begin_inset Formula $w$
+\end_inset
+
+ אז 
+\begin_inset Formula $L_{M,w}=\Sigma^{*}$
+\end_inset
+
+.
+ אחרת, 
+\begin_inset Formula $L_{M,w}=\emptyset$
+\end_inset
+
+.
+ לשתי השפות האפשריות קיימת מכונת טיורינג שמכריעה אותה, לכן בכל מקרה 
+\bar under
+קיימת
+\bar default
+ מ"ט שמכריעה את 
+\begin_inset Formula $L_{M,w}$
+\end_inset
+
+ ולכן 
+\begin_inset Formula $L_{M,w}\in R$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+שאלה
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\end_layout
+
+\begin_layout Subsection*
+סעיף
+\family roman
+\series bold
+\shape up
+\size large
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ א'
+\end_layout
+
+\begin_layout Standard
+לכל זוג שפות זרות 
+\begin_inset Formula $L_{1},L_{2}\in RE$
+\end_inset
+
+ השפה 
+\begin_inset Formula $L_{1}\in RE$
+\end_inset
+
+ היא מפרידה: 
+\begin_inset Formula $L_{1}\sse L_{1}$
+\end_inset
+
+, 
+\begin_inset Formula $L_{2}\sse\overline{L_{1}}$
+\end_inset
+
+ )כי 
+\begin_inset Formula $L_{1}\cap L_{2}=\emptyset$
+\end_inset
+
+(.
+\end_layout
+
+\begin_layout Subsection*
+סעיף ב'
+\end_layout
+
+\begin_layout Standard
+יהיו 
+\begin_inset Formula $L_{1},L_{2}\in coRE$
+\end_inset
+
+, 
+\begin_inset Formula $L_{1}\cap L_{2}=\emptyset$
+\end_inset
+
+.
+ אז קיימות מ"ט 
+\begin_inset Formula $M_{1},M_{2}$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $L\left(M_{1}\right)=\overline{L_{1}}$
+\end_inset
+
+ ו-
+\begin_inset Formula $L\left(M_{2}\right)=\overline{L_{2}}$
+\end_inset
+
+.
+ נבנה מ"ט 
+\begin_inset Formula $M$
+\end_inset
+
+ שבהנתן קלט 
+\begin_inset Formula $w$
+\end_inset
+
+ פועלת באופן הבא: 
+\begin_inset Formula $M$
+\end_inset
+
+ מריצה את 
+\begin_inset Formula $M_{1}$
+\end_inset
+
+ ו-
+\begin_inset Formula $M_{2}$
+\end_inset
+
+ על 
+\begin_inset Formula $w$
+\end_inset
+
+ "במקביל" )כבר ראינו מספר פעמים מה המשמעות(.
+ אם מתישהו 
+\begin_inset Formula $M_{1}$
+\end_inset
+
+ מקבלת את 
+\begin_inset Formula $w$
+\end_inset
+
+ 
+\begin_inset Formula $M$
+\end_inset
+
+ דוחה.
+ אם מתישהו 
+\begin_inset Formula $M_{2}$
+\end_inset
+
+ מקבלת את 
+\begin_inset Formula $w$
+\end_inset
+
+ 
+\begin_inset Formula $M$
+\end_inset
+
+ מקבלת.
+\end_layout
+
+\begin_layout Standard
+נראה כי 
+\begin_inset Formula $L_{1}\sse L\left(M\right)$
+\end_inset
+
+: אם 
+\begin_inset Formula $w\in L_{1}$
+\end_inset
+
+ אז 
+\begin_inset Formula $w\notin L_{2}$
+\end_inset
+
+ )השפות זרות( לכן 
+\begin_inset Formula $w\in\overline{L_{2}}$
+\end_inset
+
+, לכן 
+\begin_inset Formula $M_{2}$
+\end_inset
+
+ תקבל את 
+\begin_inset Formula $w$
+\end_inset
+
+.
+ בנוסף 
+\begin_inset Formula $w\notin\overline{L_{1}}$
+\end_inset
+
+, לכן 
+\begin_inset Formula $M_{1}$
+\end_inset
+
+ לא תקבל את 
+\begin_inset Formula $w$
+\end_inset
+
+, ולכן בהכרח בשלב כלשהו 
+\begin_inset Formula $M$
+\end_inset
+
+ תקבל את 
+\begin_inset Formula $w$
+\end_inset
+
+, כלומר 
+\begin_inset Formula $w\in L\left(M\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+נראה כי 
+\begin_inset Formula $L_{2}\sse\overline{L\left(M\right)}$
+\end_inset
+
+: אם 
+\begin_inset Formula $w\in L_{2}$
+\end_inset
+
+ אז 
+\begin_inset Formula $w\in\overline{L_{1}}$
+\end_inset
+
+, לכן 
+\begin_inset Formula $M_{1}$
+\end_inset
+
+ תקבל את 
+\begin_inset Formula $w$
+\end_inset
+
+.
+ בנוסף 
+\begin_inset Formula $w\notin\overline{L_{2}}$
+\end_inset
+
+, לכן 
+\begin_inset Formula $M_{2}$
+\end_inset
+
+ לא תקבל את 
+\begin_inset Formula $w$
+\end_inset
+
+, ולכן בהכרח בשלב כלשהו 
+\begin_inset Formula $M$
+\end_inset
+
+ תדחה את 
+\begin_inset Formula $w$
+\end_inset
+
+, כלומר 
+\begin_inset Formula $w\in\overline{L\left(M\right)}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+נותר להראות כי 
+\begin_inset Formula $L\left(M\right)\in R$
+\end_inset
+
+.
+ נשים לב כי מתקיים, לפי דה-מורגן
+\begin_inset Formula 
+\[
+\overline{L_{1}}\cup\overline{L_{2}}=\overline{L_{1}\cap L_{2}}=\Sigma^{*}
+\]
+
+\end_inset
+
+כלומר לכל 
+\begin_inset Formula $w\in\Sigma^{*}$
+\end_inset
+
+, 
+\begin_inset Formula $M_{1}$
+\end_inset
+
+ מקבלת את 
+\begin_inset Formula $w$
+\end_inset
+
+ או ש-
+\begin_inset Formula $M_{2}$
+\end_inset
+
+ מקבלת את 
+\begin_inset Formula $w$
+\end_inset
+
+, לכן 
+\begin_inset Formula $M$
+\end_inset
+
+ מקבלת או דוחה את 
+\begin_inset Formula $w$
+\end_inset
+
+, לכן 
+\begin_inset Formula $M$
+\end_inset
+
+ מכריעה את השפה 
+\begin_inset Formula $L\left(M\right)$
+\end_inset
+
+ ו-
+\begin_inset Formula $L\left(M\right)\in R$
+\end_inset
+
+ כנדרש.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+שאלה
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+3
+\end_layout
+
+\begin_layout Subsection*
+סעיף א'
+\end_layout
+
+\begin_layout Standard
+נראה כי 
+\begin_inset Formula $CONJ_{CFG}\notin R$
+\end_inset
+
+ ע"י כך שנראה כי 
+\begin_inset Formula $PCP\leq_{m}CONJ_{CFG}$
+\end_inset
+
+.
+ נגדיר רדוקציה 
+\begin_inset Formula $T$
+\end_inset
+
+ אשר בהינתן קלט 
+\begin_inset Formula $\left[\frac{x_{1}}{y_{1}}\right],\ldots,\left[\frac{x_{k}}{y_{k}}\right]$
+\end_inset
+
+ לבעיית ה-
+\begin_inset Formula $PCP$
+\end_inset
+
+ בונה דקדוקים 
+\begin_inset Formula $G_{x},G_{y}$
+\end_inset
+
+ כמתואר בתרגיל ומחזירה 
+\begin_inset Formula $\left\langle G_{x},G_{y}\right\rangle $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+נכונות
+\bar default
+: אם 
+\begin_inset Formula $\left[\frac{x_{1}}{y_{1}}\right],\ldots,\left[\frac{x_{k}}{y_{k}}\right]\in PCP$
+\end_inset
+
+ אז קיימת סדרת פתרון 
+\begin_inset Formula $\left[\frac{x_{i_{1}}}{y_{i_{1}}}\right],\ldots,\left[\frac{x_{i_{t}}}{y_{i_{t}}}\right]$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $x_{i_{1}}\cdots x_{i_{t}}=y_{i_{1}}\cdots y_{i_{t}}$
+\end_inset
+
+.
+ לא קשה לראות כי 
+\begin_inset Formula $x_{i_{1}}\cdots x_{i_{t}}\cdot a_{i_{t}}\cdots a_{i_{1}}\in L_{x},\, y_{i_{1}}\cdots y_{i_{t}}\cdot a_{i_{t}}\cdots a_{i_{1}}\in L_{y}$
+\end_inset
+
+ ע"י הפעלה של 
+\begin_inset Formula $t$
+\end_inset
+
+ צעדי גזירה.
+ בצעד מספר 
+\begin_inset Formula $1\leq j\leq t-1$
+\end_inset
+
+ נפעיל את הכלל 
+\begin_inset Formula $x_{i_{j}}Sa_{i_{j}}$
+\end_inset
+
+ )
+\begin_inset Formula $y_{i_{j}}Sa_{i_{j}}$
+\end_inset
+
+( והצעד האחרון יהיה 
+\begin_inset Formula $x_{i_{t}}a_{i_{t}}$
+\end_inset
+
+ )
+\begin_inset Formula $y_{i_{j}}Sa_{i_{j}}$
+\end_inset
+
+(.
+ מתקיים
+\begin_inset Formula 
+\[
+x_{i_{1}}\cdots x_{i_{t}}\cdot a_{i_{t}}\cdots a_{i_{1}}=y_{i_{1}}\cdots y_{i_{t}}\cdot a_{i_{t}}\cdots a_{i_{1}}
+\]
+
+\end_inset
+
+לכן 
+\begin_inset Formula $G_{x}\cap G_{y}\neq\emptyset$
+\end_inset
+
+ ולכן 
+\begin_inset Formula $\left\langle G_{x},G_{y}\right\rangle \in CONJ_{CFG}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+אם 
+\begin_inset Formula $\left\langle G_{x},G_{y}\right\rangle \in CONJ_{CFG}$
+\end_inset
+
+ אז קיימת מילה 
+\begin_inset Formula $w$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $w\in L_{x}\cap L_{y}$
+\end_inset
+
+.
+ לא קשה להיווכח כי כל 
+\begin_inset Formula $x\in L_{x}$
+\end_inset
+
+ הוא מהצורה 
+\begin_inset Formula $x_{i_{1}}\cdots x_{i_{t}}\cdot a_{i_{t}}\cdots a_{i_{1}}$
+\end_inset
+
+ עבור 
+\begin_inset Formula $t\in\mathbb{N}_{0}$
+\end_inset
+
+ כלשהו )למשל באינדוקציה על מספר כללי הגזירה שהופעלו( וכל 
+\begin_inset Formula $y\in L_{y}$
+\end_inset
+
+ הוא מהצורה 
+\begin_inset Formula $y_{i_{1}}\cdots y_{i_{t}}\cdot a_{i_{t}}\cdots a_{i_{1}}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $w\in G_{x}$
+\end_inset
+
+ לכן 
+\begin_inset Formula $w=x_{i_{1}}\cdots x_{i_{t}}\cdot a_{i_{t}}\cdots a_{i_{1}}$
+\end_inset
+
+ עבור 
+\begin_inset Formula $i_{1},\ldots,i_{t}\in\left[k\right]$
+\end_inset
+
+.
+ 
+\begin_inset Formula $w\in G_{y}$
+\end_inset
+
+ לכן 
+\begin_inset Formula $w=y_{j_{1}}\cdots y_{j_{s}}\cdot a_{j_{s}}\cdots a_{j_{1}}$
+\end_inset
+
+ עבור 
+\begin_inset Formula $j_{1},\ldots,j_{s}\in\left[k\right]$
+\end_inset
+
+.
+ מתקיים
+\begin_inset Formula 
+\[
+x_{i_{1}}\cdots x_{i_{t}}\cdot a_{i_{t}}\cdots a_{i_{1}}=y_{j_{1}}\cdots y_{j_{s}}\cdot a_{j_{s}}\cdots a_{j_{1}}
+\]
+
+\end_inset
+
+לכן )בהנחה ש-
+\begin_inset Formula $I\cap\Sigma=\emptyset$
+\end_inset
+
+(
+\begin_inset Formula 
+\[
+a_{j_{s}}\cdots a_{j_{1}}=a_{i_{t}}\cdots a_{i_{1}}
+\]
+
+\end_inset
+
+לכן 
+\begin_inset Formula $t=s$
+\end_inset
+
+ ו-
+\begin_inset Formula $i_{1}=j_{1},\ldots,i_{t}=j_{t}$
+\end_inset
+
+.
+ לכן
+\begin_inset Formula 
+\[
+x_{i_{1}}\cdots x_{i_{t}}=y_{j_{1}}\cdots y_{j_{s}}=y_{i_{1}}\cdots y_{i_{t}}
+\]
+
+\end_inset
+
+כלומר 
+\begin_inset Formula $\left[\frac{x_{i_{1}}}{y_{i_{1}}}\right],\ldots,\left[\frac{x_{i_{t}}}{y_{i_{t}}}\right]$
+\end_inset
+
+ מהווה סדרת פתרון ו-
+\begin_inset Formula $\left[\frac{x_{1}}{y_{1}}\right],\ldots,\left[\frac{x_{k}}{y_{k}}\right]\in PCP$
+\end_inset
+
+ כנדרש.
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+חישוביות
+\bar default
+: 
+\begin_inset Formula $T$
+\end_inset
+
+ חשיבה מכיוון שכל שנדרש לעשות בהינתן תיאור של קלט 
+\begin_inset Formula $\left[\frac{x_{1}}{y_{1}}\right],\ldots,\left[\frac{x_{k}}{y_{k}}\right]$
+\end_inset
+
+ הוא לבנות תיאור של הדקדוקים.
+ לכל אות 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ בונים זוג צעדי גזירה 
+\begin_inset Formula $S\rightarrow x_{i}Sa_{i}|x_{i}a_{i}$
+\end_inset
+
+ ל-
+\begin_inset Formula $G_{x}$
+\end_inset
+
+, כנ"ל עבור 
+\begin_inset Formula $G_{y}$
+\end_inset
+
+ וסיימנו.
+\end_layout
+
+\begin_layout Subsection*
+סעיף ג'
+\end_layout
+
+\begin_layout Standard
+נניח בשלילה כי 
+\begin_inset Formula $ALL_{CFG}\in R$
+\end_inset
+
+, אז גם 
+\begin_inset Formula $\overline{ALL_{CFG}}\in R$
+\end_inset
+
+.
+ נראה כי 
+\begin_inset Formula $PCP\leq_{m}\overline{ALL{}_{CFG}}$
+\end_inset
+
+ ונגיע לסתירה.
+ נגדיר רדוקציה 
+\begin_inset Formula $T$
+\end_inset
+
+ אשר בהינתן קלט 
+\begin_inset Formula $\left[\frac{x_{1}}{y_{1}}\right],\ldots,\left[\frac{x_{k}}{y_{k}}\right]$
+\end_inset
+
+ לבעיית ה-
+\begin_inset Formula $PCP$
+\end_inset
+
+ בונה את הדקדוק 
+\begin_inset Formula $G=\overline{G_{x}}\cup\overline{G_{y}}$
+\end_inset
+
+ ומחזירה 
+\begin_inset Formula $\left\langle G\right\rangle $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+נכונות
+\bar default
+: ראינו בסעיף א' כי 
+\begin_inset Formula $\left[\frac{x_{1}}{y_{1}}\right],\ldots,\left[\frac{x_{k}}{y_{k}}\right]\in PCP$
+\end_inset
+
+ אם"ם 
+\begin_inset Formula $L_{x}\cap L_{y}\neq\emptyset$
+\end_inset
+
+.
+ בנוסף, לפי דמורגן
+\begin_inset Formula 
+\[
+L_{x}\cap L_{y}\neq\emptyset\iff\overline{\overline{L_{x}}\cup\overline{L_{y}}}\neq\emptyset\iff\overline{L_{x}}\cup\overline{L_{y}}\neq\Sigma^{*}
+\]
+
+\end_inset
+
+נשים לב כי 
+\begin_inset Formula $L\left(G\right)=\overline{L_{x}}\cup\overline{L_{y}}$
+\end_inset
+
+, לכן נקבל כי
+\begin_inset Formula 
+\[
+\left[\frac{x_{1}}{y_{1}}\right],\ldots,\left[\frac{x_{k}}{y_{k}}\right]\in PCP\iff\overline{L_{x}}\cup\overline{L_{y}}\neq\Sigma^{*}\iff G\in\overline{ALL_{CFG}}
+\]
+
+\end_inset
+
+
+\bar under
+חישוביות
+\bar default
+: לפי סעיף ב' ניתן לבנות 
+\begin_inset Formula $PDA$
+\end_inset
+
+ ל-
+\begin_inset Formula $\overline{L_{x}}$
+\end_inset
+
+ ול-
+\begin_inset Formula $\overline{L_{y}}$
+\end_inset
+
+.
+ בהינתן האוטומטים ניתן לבנות את הדקדוקים 
+\begin_inset Formula $\overline{G_{x}},\overline{G_{y}}$
+\end_inset
+
+, ואז לבנות את דקדוק האיחוד 
+\begin_inset Formula $G=\overline{G_{x}}\cup\overline{G_{y}}$
+\end_inset
+
+ והרדוקציה חשיבה כנדרש.
+\end_layout
+
+\begin_layout Standard
+קיבלנו כי 
+\begin_inset Formula $PCP\leq_{m}\overline{ALL{}_{CFG}}$
+\end_inset
+
+ לכן 
+\begin_inset Formula $ALL{}_{CFG}\notin R$
+\end_inset
+
+ ולכן 
+\begin_inset Formula $ALL_{CFG}\notin R$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+שאלה
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+4
+\end_layout
+
+\begin_layout Subsection*
+סעיף א'
+\end_layout
+
+\begin_layout Standard
+נבנה רדוקציה 
+\begin_inset Formula $T$
+\end_inset
+
+ מ-
+\begin_inset Formula $CLIQUE$
+\end_inset
+
+ ל-
+\begin_inset Formula $IS$
+\end_inset
+
+.
+ בהנתן קלט 
+\begin_inset Formula $\left\langle G,k\right\rangle $
+\end_inset
+
+נבנה גרף 
+\begin_inset Formula $G^{\prime}=\left\langle V,E^{\prime}\right\rangle $
+\end_inset
+
+ כך ש
+\begin_inset Formula 
+\[
+E^{\prime}=\left\{ \left\{ u,v\right\} \,:\,\left\{ u,v\right\} \notin E\right\} 
+\]
+
+\end_inset
+
+נחזיר 
+\begin_inset Formula $\left\langle G^{\prime},k\right\rangle $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+נכונות
+\bar default
+: 
+\begin_inset Formula $G$
+\end_inset
+
+ מכילה קליקה 
+\begin_inset Formula $S$
+\end_inset
+
+ בגודל 
+\begin_inset Formula $k$
+\end_inset
+
+ אם"ם לכל 
+\begin_inset Formula $u,v\in S$
+\end_inset
+
+ מתקיים 
+\begin_inset Formula $\left\{ u,v\right\} \in E$
+\end_inset
+
+ אם"ם לכל 
+\begin_inset Formula $u,v\in S$
+\end_inset
+
+ מתקיים 
+\begin_inset Formula $\left\{ u,v\right\} \notin E^{\prime}$
+\end_inset
+
+ )מבניה( אם"ם 
+\begin_inset Formula $S$
+\end_inset
+
+ קבוצת קודקודים בלתי תלויה ב-
+\begin_inset Formula $G^{\prime}$
+\end_inset
+
+ בגודל 
+\begin_inset Formula $k$
+\end_inset
+
+ )הגדרה(.
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+חישוביות
+\bar default
+: ניתן לחשב את 
+\begin_inset Formula $T$
+\end_inset
+
+ ע"י מכונת טיורינג שעוברת על כל זוג קודקודים 
+\begin_inset Formula $u,v\in V$
+\end_inset
+
+ ומוסיפה צלע ל-
+\begin_inset Formula $E^{\prime}$
+\end_inset
+
+ אם"ם 
+\begin_inset Formula $\left(u,v\right)\notin E$
+\end_inset
+
+.
+ זה לוקח 
+\begin_inset Formula $O\left(\left|V\right|^{2}\left|E\right|\right)$
+\end_inset
+
+ לכל היותר, כולל הבדיקה האם 
+\begin_inset Formula $\left\{ u,v\right\} \notin E$
+\end_inset
+
+.
+ לבנות את שאר ייצוג הגרף לוקח 
+\begin_inset Formula $O\left(\left|V\right|\right)$
+\end_inset
+
+ וסה"כ הרדוקציה חשיבה בזמן פולינומי, כנדרש.
+\end_layout
+
+\begin_layout Subsection*
+סעיף ב'
+\end_layout
+
+\begin_layout Standard
+נבנה רדוקציה 
+\begin_inset Formula $T$
+\end_inset
+
+ מ-
+\begin_inset Formula $IS$
+\end_inset
+
+ ל-
+\begin_inset Formula $VC$
+\end_inset
+
+.
+ בהנתן קלט 
+\begin_inset Formula $\left\langle G,k\right\rangle $
+\end_inset
+
+נחזיר 
+\begin_inset Formula $\left\langle G,\left|V\right|-k\right\rangle $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+נכונות
+\bar default
+: אם 
+\begin_inset Formula $G$
+\end_inset
+
+ מכילה קבוצת קודקודים בלתי תלויה 
+\begin_inset Formula $S$
+\end_inset
+
+ בגודל 
+\begin_inset Formula $k$
+\end_inset
+
+, נגדיר 
+\begin_inset Formula $W=V\backslash S$
+\end_inset
+
+ ונניח בשלילה כי קיים 
+\begin_inset Formula $\left\{ u,v\right\} \in E$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $u\notin W$
+\end_inset
+
+ וגם 
+\begin_inset Formula $v\notin W$
+\end_inset
+
+.
+ אז 
+\begin_inset Formula $u\in S$
+\end_inset
+
+ וגם 
+\begin_inset Formula $v\in S$
+\end_inset
+
+, בסתירה לכך ש-
+\begin_inset Formula $S$
+\end_inset
+
+ קבוצת קודקודים בלתי תלויה, לכן לא קיימת צלע כזו ו-
+\begin_inset Formula $W$
+\end_inset
+
+ מהווה כיסוי קודקודים בגודל 
+\begin_inset Formula $\left|V\right|-k$
+\end_inset
+
+ כנדרש.
+\end_layout
+
+\begin_layout Standard
+בכיוון השני, אם 
+\begin_inset Formula $G$
+\end_inset
+
+ מכילה כיסוי קודקודים 
+\begin_inset Formula $W$
+\end_inset
+
+ בגודל 
+\begin_inset Formula $n-k$
+\end_inset
+
+, נגדיר 
+\begin_inset Formula $S=V\backslash W$
+\end_inset
+
+ ונניח בשלילה כי קיים 
+\begin_inset Formula $\left\{ u,v\right\} \in E$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $u\in S$
+\end_inset
+
+ וגם 
+\begin_inset Formula $v\in S$
+\end_inset
+
+.
+ אז 
+\begin_inset Formula $u\notin W$
+\end_inset
+
+ וגם 
+\begin_inset Formula $v\notin W$
+\end_inset
+
+, בסתירה לכך ש-
+\begin_inset Formula $W$
+\end_inset
+
+ כיסוי קודקודים, לכן לא קיימת צלע כזו ו-
+\begin_inset Formula $S$
+\end_inset
+
+ קבוצת קודקודים בלתי תלויה בגודל 
+\begin_inset Formula $k$
+\end_inset
+
+ כנדרש.
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+חישוביות
+\bar default
+: ניתן לחשב את 
+\begin_inset Formula $T$
+\end_inset
+
+ בקלות ע"י ספירת מספר הקודקודים בגרף והחזרת 
+\begin_inset Formula $\left\langle G,\left|V\right|-k\right\rangle $
+\end_inset
+
+ בזמן 
+\begin_inset Formula $O\left(\left|V\right|\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+סעיף ג'
+\end_layout
+
+\begin_layout Standard
+נבנה רדוקציה 
+\begin_inset Formula $T$
+\end_inset
+
+ מ-
+\begin_inset Formula $VC$
+\end_inset
+
+ ל-
+\begin_inset Formula $CLIQUE$
+\end_inset
+
+.
+ בהנתן קלט 
+\begin_inset Formula $\left\langle G,k\right\rangle $
+\end_inset
+
+ נבנה גרף 
+\begin_inset Formula $G^{\prime}=\left\langle V,E^{\prime}\right\rangle $
+\end_inset
+
+ כך ש
+\begin_inset Formula 
+\[
+E^{\prime}=\left\{ \left\{ u,v\right\} \,:\,\left\{ u,v\right\} \notin E\right\} 
+\]
+
+\end_inset
+
+נחזיר 
+\begin_inset Formula $\left\langle G^{\prime},\left|V\right|-k\right\rangle $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+נכונות
+\bar default
+: אם 
+\begin_inset Formula $G$
+\end_inset
+
+ מכילה כיסוי קודקודים 
+\begin_inset Formula $W$
+\end_inset
+
+ בגודל 
+\begin_inset Formula $k$
+\end_inset
+
+, נגדיר 
+\begin_inset Formula $S=V\backslash W$
+\end_inset
+
+.
+ בסעיף ב' הוכחנו כי 
+\begin_inset Formula $S$
+\end_inset
+
+ היא קבוצת קודקודים בלתי תלויה ב-
+\begin_inset Formula $G$
+\end_inset
+
+.
+ בסעיף א' הוכחנו כי 
+\begin_inset Formula $S$
+\end_inset
+
+ קליקה ב-
+\begin_inset Formula $G^{\prime}$
+\end_inset
+
+ )נשים לב כי 
+\begin_inset Formula $G^{\prime\prime}=G$
+\end_inset
+
+(, לכן 
+\begin_inset Formula $G^{\prime}$
+\end_inset
+
+ מכילה קליקה בגודל 
+\begin_inset Formula $\left|V\right|-k$
+\end_inset
+
+ כנדרש.
+\end_layout
+
+\begin_layout Standard
+אם 
+\begin_inset Formula $G^{\prime}$
+\end_inset
+
+ מכילה קליקה 
+\begin_inset Formula $S$
+\end_inset
+
+ בגודל 
+\begin_inset Formula $\left|V\right|-k$
+\end_inset
+
+, בסעיף א' הוכחנו כי 
+\begin_inset Formula $S$
+\end_inset
+
+ קבוצת קודקודים בלתי תלויה ב-
+\begin_inset Formula $G$
+\end_inset
+
+.
+ נגדיר 
+\begin_inset Formula $W=V\backslash S$
+\end_inset
+
+, בסעיף ב' הוכחנו כי 
+\begin_inset Formula $W$
+\end_inset
+
+ כיסוי קודקודים ב-
+\begin_inset Formula $G$
+\end_inset
+
+, לכן 
+\begin_inset Formula $G$
+\end_inset
+
+ מכילה כיסוי קודקודים בגודל 
+\begin_inset Formula $\left|V\right|$
+\end_inset
+
+ כנדרש.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+שאלה
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+5
+\end_layout
+
+\begin_layout Subsection*
+סעיף א'
+\end_layout
+
+\begin_layout Standard
+נגדיר רדוקציה 
+\begin_inset Formula $T$
+\end_inset
+
+ מ-
+\begin_inset Formula $HAMPATH$
+\end_inset
+
+ ל-
+\begin_inset Formula $D-HAMPATH$
+\end_inset
+
+ באופן הבא: בהינתן קלט 
+\begin_inset Formula $\left\langle G,s,t\right\rangle $
+\end_inset
+
+ כאשר 
+\begin_inset Formula $G$
+\end_inset
+
+ גרף לא מכוון, נבנה גרף מכוון 
+\begin_inset Formula $G^{\prime}=\left\langle V,E^{\prime}\right\rangle $
+\end_inset
+
+ כאשר 
+\begin_inset Formula $E^{\prime}=\left\{ \left(u,v\right):\,\left\{ u,v\right\} \in E\right\} $
+\end_inset
+
+.
+ נחזיר 
+\begin_inset Formula $\left\langle G^{\prime},s,t\right\rangle $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+נכונות
+\bar default
+: נסמן 
+\begin_inset Formula $\left|V\right|=n$
+\end_inset
+
+.
+ אם 
+\begin_inset Formula $G$
+\end_inset
+
+ מכילה מסילה המילטונית מ-
+\begin_inset Formula $s$
+\end_inset
+
+ ל-
+\begin_inset Formula $t$
+\end_inset
+
+ אז קיימת מסילה 
+\begin_inset Formula $s=v_{1},\ldots,v_{n}=t$
+\end_inset
+
+ כך שלכל 
+\begin_inset Formula $i\in\left[n-1\right]$
+\end_inset
+
+ מתקיים 
+\begin_inset Formula $\left\{ v_{i},v_{i+1}\right\} \in E$
+\end_inset
+
+ וגם 
+\begin_inset Formula $v_{i}\neq v_{j}$
+\end_inset
+
+ לכל 
+\begin_inset Formula $i\neq j$
+\end_inset
+
+.
+ לכן מבניית 
+\begin_inset Formula $E^{\prime}$
+\end_inset
+
+, לכל 
+\begin_inset Formula $i\in\left[n-1\right]$
+\end_inset
+
+ מתקיים 
+\begin_inset Formula $\left(v_{i},v_{i+1}\right)\in E^{\prime}$
+\end_inset
+
+.
+ לכן 
+\begin_inset Formula $v_{1},\ldots,v_{n}$
+\end_inset
+
+ מהווה מסילה המילטונית ב-
+\begin_inset Formula $G^{\prime}$
+\end_inset
+
+ ו-
+\begin_inset Formula $\left\langle G^{\prime},s,t\right\rangle \in D-HAMPATH$
+\end_inset
+
+ כנדרש.
+\end_layout
+
+\begin_layout Standard
+בכיוון השני, אם 
+\begin_inset Formula $G^{\prime}$
+\end_inset
+
+ מכילה מסילה המילטונית מ-
+\begin_inset Formula $s$
+\end_inset
+
+ ל-
+\begin_inset Formula $t$
+\end_inset
+
+ אז קיימת מסילה 
+\begin_inset Formula $s=v_{1},\ldots,v_{n}=t$
+\end_inset
+
+ כך שלכל 
+\begin_inset Formula $i\in\left[n-1\right]$
+\end_inset
+
+ מתקיים 
+\begin_inset Formula $\left(v_{i},v_{i+1}\right)\in E$
+\end_inset
+
+ וגם 
+\begin_inset Formula $v_{i}\neq v_{j}$
+\end_inset
+
+ לכל 
+\begin_inset Formula $i\neq j$
+\end_inset
+
+.
+ לכן מבניית 
+\begin_inset Formula $E^{\prime}$
+\end_inset
+
+, לכל 
+\begin_inset Formula $i\in\left[n-1\right]$
+\end_inset
+
+ מתקיים 
+\begin_inset Formula $\left\{ v_{i},v_{i+1}\right\} \in E$
+\end_inset
+
+.
+ לכן 
+\begin_inset Formula $v_{1},\ldots,v_{n}$
+\end_inset
+
+ מהווה מסילה המילטונית ב-
+\begin_inset Formula $G$
+\end_inset
+
+ ו-
+\begin_inset Formula $\left\langle G,s,t\right\rangle \in HAMPATH$
+\end_inset
+
+ כנדרש.
+\end_layout
+
+\begin_layout Subsection*
+סעיף ב'
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula $k>3$
+\end_inset
+
+.
+ נגדיר רדוקציה 
+\begin_inset Formula $T$
+\end_inset
+
+ באופן הבא, בהינתן קלט 
+\begin_inset Formula $G=\left\langle V,E\right\rangle $
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Itemize
+נגדיר 
+\begin_inset Formula $V_{c}=\left\{ v_{1}^{c},\ldots,v_{k-3}^{c}\right\} $
+\end_inset
+
+ קבוצת קודקודים זרה ל-
+\begin_inset Formula $V$
+\end_inset
+
+ ונגדיר 
+\begin_inset Formula $G_{clique}=\left\langle V_{c},E_{c}\right\rangle $
+\end_inset
+
+ גרף מלא עם 
+\begin_inset Formula $k-3$
+\end_inset
+
+ קודקודים )כלומר לכל 
+\begin_inset Formula $u,v\in V_{c}$
+\end_inset
+
+ מתקיים 
+\begin_inset Formula $\left\{ u,v\right\} \in E_{c}$
+\end_inset
+
+(.
+\end_layout
+
+\begin_layout Itemize
+נגדיר 
+\begin_inset Formula $E_{connect}=\left\{ \left\{ u,v\right\} \,:\thinspace u\in E_{c},v\in E\right\} $
+\end_inset
+
+, כלומר 
+\begin_inset Formula $E_{connect}$
+\end_inset
+
+ מחברת כל קודקוד בגרף 
+\begin_inset Formula $G$
+\end_inset
+
+ עם כל קודקוד בגרף 
+\begin_inset Formula $G_{clique}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+נגדיר 
+\begin_inset Formula $E^{\prime}=E\cup E_{c}\cup E_{connect}$
+\end_inset
+
+, 
+\begin_inset Formula $V^{\prime}=V\cup V_{c}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+נבנה את הגרף 
+\begin_inset Formula $G^{\prime}=\left\langle V^{\prime},E^{\prime}\right\rangle $
+\end_inset
+
+ ונחזיר 
+\begin_inset Formula $\left\langle G^{\prime}\right\rangle $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+נכונות
+\bar default
+: אם 
+\begin_inset Formula $\left\langle G\right\rangle \in3-COLOR$
+\end_inset
+
+ אז קיימת פונקציית צביעה 
+\begin_inset Formula $C\,:\, V\rightarrow\left\{ 1,2,3\right\} $
+\end_inset
+
+.
+ נגדיר פונקציית צביעה 
+\begin_inset Formula $C^{\prime}\,:\, V^{\prime}\rightarrow\left\{ 1,\ldots,k\right\} $
+\end_inset
+
+ באופן הבא )ניזכר כי 
+\begin_inset Formula $V^{\prime}=V\cup V_{c}$
+\end_inset
+
+(:
+\begin_inset Formula 
+\[
+C^{\prime}\left(v\right)=\begin{cases}
+C\left(v\right) & v\in V\\
+i+3 & v=v_{i}^{c}\in V_{c}
+\end{cases}
+\]
+
+\end_inset
+
+נניח בשלילה כי 
+\begin_inset Formula $C^{\prime}$
+\end_inset
+
+ פונקציית צביעה לא חוקית, אז קיימים 
+\begin_inset Formula $u,v\in V^{\prime}$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $C^{\prime}\left(u\right)=C^{\prime}\left(v\right)$
+\end_inset
+
+ וגם 
+\begin_inset Formula $\left\{ u,v\right\} \in E^{\prime}$
+\end_inset
+
+.
+ אם 
+\begin_inset Formula $u,v\in V$
+\end_inset
+
+ נקבל סתירה כי 
+\begin_inset Formula $C$
+\end_inset
+
+ פונ' צביעה חוקית.
+ אם 
+\begin_inset Formula $u,v\in V_{c}$
+\end_inset
+
+ נקבל סתירה מהגדרת 
+\begin_inset Formula $C^{\prime}$
+\end_inset
+
+.
+ אם אחד ב-
+\begin_inset Formula $V$
+\end_inset
+
+ ואחד ב-
+\begin_inset Formula $V^{\prime}$
+\end_inset
+
+, בה"כ 
+\begin_inset Formula $u\in V$
+\end_inset
+
+ ו-
+\begin_inset Formula $v\in V^{\prime}$
+\end_inset
+
+, נקבל סתירה כי 
+\begin_inset Formula $C^{\prime}\left(u\right)\in\left\{ 1,2,3\right\} $
+\end_inset
+
+ ו-
+\begin_inset Formula $C^{\prime}\left(v\right)\in\left\{ 4,\ldots,k\right\} $
+\end_inset
+
+.
+ כלומר 
+\begin_inset Formula $C^{\prime}$
+\end_inset
+
+ פונ' צביעה חוקית ו-
+\begin_inset Formula $\left\langle G^{\prime}\right\rangle \in k-COLOR$
+\end_inset
+
+ כנדרש.
+\end_layout
+
+\begin_layout Standard
+אם 
+\begin_inset Formula $\left\langle G^{\prime}\right\rangle \in k-COLOR$
+\end_inset
+
+ אז קיימת פונקציית צביעה 
+\begin_inset Formula $C^{\prime}\,:\, V^{\prime}\rightarrow\left\{ 1,\ldots,k\right\} $
+\end_inset
+
+.
+ כל קודקודי 
+\begin_inset Formula $V_{c}$
+\end_inset
+
+ מחוברים זה לזה, לכן בהכרח כל קודקוד ב-
+\begin_inset Formula $V_{c}$
+\end_inset
+
+ צבוע בצבע אחר.
+ בנוסף, כל קודקוד ב-
+\begin_inset Formula $V_{c}$
+\end_inset
+
+ מחובר לכל קודקוד ב-
+\begin_inset Formula $V$
+\end_inset
+
+, לכן כל קודקוד ב-
+\begin_inset Formula $V$
+\end_inset
+
+ צבוע בצבע אחר מכל קודקוד ב-
+\begin_inset Formula $V_{c}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $V_{c}$
+\end_inset
+
+ צבועה ב-
+\begin_inset Formula $k-3$
+\end_inset
+
+ צבעים שונים, וסה"כ הגרף צבוע ב-
+\begin_inset Formula $k$
+\end_inset
+
+ צבעים, לכן בהכרח 
+\begin_inset Formula $V$
+\end_inset
+
+ צבועה ב-
+\begin_inset Formula $3$
+\end_inset
+
+ צבעים שונים, לכן ניתן להגדיר פונקציית צביעה 
+\begin_inset Formula $C\,:\, V\rightarrow\left\{ i_{1},i_{2},i_{3}\right\} $
+\end_inset
+
+, 
+\begin_inset Formula $i_{j}\in\left[k\right]$
+\end_inset
+
+ המוגדרת 
+\begin_inset Formula $C\left(v\right)=C^{\prime}\left(v\right)$
+\end_inset
+
+ ו-
+\begin_inset Formula $\left\langle G\right\rangle \in3-COLOR$
+\end_inset
+
+ כנדרש.
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+חישוביות
+\bar default
+: 
+\begin_inset Formula $T$
+\end_inset
+
+ חשיבה מכיוון שניתן לבנות את 
+\begin_inset Formula $G^{\prime}$
+\end_inset
+
+ ע"י בניית הגרף 
+\begin_inset Formula $G_{clique}$
+\end_inset
+
+ וקבוצת הצלעות 
+\begin_inset Formula $E_{connect}$
+\end_inset
+
+ בזמן פולינומי בגודל הגרף 
+\begin_inset Formula $G$
+\end_inset
+
+.
+\end_layout
+
+\end_body
+\end_document
