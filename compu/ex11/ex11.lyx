@@ -1,0 +1,1063 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\usepackage{tikz}
+\usetikzlibrary{automata,positioning}
+\tikzset{initial text={}}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language hebrew
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1in
+\topmargin 1in
+\rightmargin 1in
+\bottommargin 1in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip smallskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\sse}{\subseteq}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\eps}{\varepsilon}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\os}[2]{\overset{#2}{#1}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\lang}[1]{\mathscr{L}\left(#1\right)}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\pr}[1]{#1^{\prime}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\derives}{\overset{*}{\Rightarrow}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+שאלה
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\end_layout
+
+\begin_layout Subsection*
+סעיף א'
+\end_layout
+
+\begin_layout Standard
+נניח כי 
+\begin_inset Formula $P=NP$
+\end_inset
+
+.
+ אז 
+\begin_inset Formula 
+\[
+coNP=\left\{ L\,:\thinspace\overline{L}\in NP\right\} =\left\{ L\,:\thinspace\overline{L}\in P\right\} 
+\]
+
+\end_inset
+
+תהי 
+\begin_inset Formula $L\in coNP$
+\end_inset
+
+, אז 
+\begin_inset Formula $\overline{L}\in P$
+\end_inset
+
+, לכן קיימת מ"ט 
+\begin_inset Formula $T$
+\end_inset
+
+ אשר מכריעה את 
+\begin_inset Formula $\overline{L}$
+\end_inset
+
+ בזמן פולינומי.
+ נהפוך ב-
+\begin_inset Formula $T$
+\end_inset
+
+ את המצב המקבל והדוחה ונקבל מ"ט אשר מכריעה את 
+\begin_inset Formula $L$
+\end_inset
+
+ בזמן פולינומי, לכן 
+\begin_inset Formula $L\in P$
+\end_inset
+
+, לכן 
+\begin_inset Formula $L\in NP$
+\end_inset
+
+.
+ ההוכחה בכיוון ההפוך זהה, לכן 
+\begin_inset Formula $NP=coNP$
+\end_inset
+
+ כנדרש.
+\end_layout
+
+\begin_layout Subsection*
+סעיף ב'
+\end_layout
+
+\begin_layout Standard
+נניח 
+\begin_inset Formula $NP\sse coNP$
+\end_inset
+
+.
+ לכל 
+\begin_inset Formula $L\in coNP$
+\end_inset
+
+ מתקיים 
+\begin_inset Formula $\overline{L}\in NP$
+\end_inset
+
+, ומההנחה מתקיים 
+\begin_inset Formula $\overline{L}\in coNP$
+\end_inset
+
+.
+ לכן 
+\begin_inset Formula $L=\overline{\overline{L}}\in NP$
+\end_inset
+
+, כלומר 
+\begin_inset Formula $coNP\sse NP$
+\end_inset
+
+, כלומר 
+\begin_inset Formula $NP=coNP$
+\end_inset
+
+ כנדרש.
+\end_layout
+
+\begin_layout Subsection*
+סעיף ג'
+\end_layout
+
+\begin_layout Standard
+יהיו 
+\begin_inset Formula $A\in NP$
+\end_inset
+
+ שפה 
+\begin_inset Formula $NP$
+\end_inset
+
+-שלמה, 
+\begin_inset Formula $B\in coNP$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $A\leq_{p}B$
+\end_inset
+
+.
+ אז 
+\begin_inset Formula $B$
+\end_inset
+
+ 
+\begin_inset Formula $NP$
+\end_inset
+
+-קשה.
+ תהי 
+\begin_inset Formula $L\in NP$
+\end_inset
+
+, אז 
+\begin_inset Formula $L\leq_{p}B$
+\end_inset
+
+, לכן קיימת רדוקציה פולינומית 
+\begin_inset Formula $f$
+\end_inset
+
+ מ-
+\begin_inset Formula $L$
+\end_inset
+
+ ל-
+\begin_inset Formula $B$
+\end_inset
+
+ ומתקיים 
+\begin_inset Formula 
+\[
+x\in\overline{L}\iff x\notin L\iff f\left(x\right)\notin B\iff f\left(x\right)\in\overline{B}
+\]
+
+\end_inset
+
+לכן 
+\begin_inset Formula $\overline{L}\leq_{p}\overline{B}$
+\end_inset
+
+ כלומר 
+\begin_inset Formula $\overline{L}\in NP$
+\end_inset
+
+, כלומר 
+\begin_inset Formula $L\in coNP$
+\end_inset
+
+.
+ לכן 
+\begin_inset Formula $NP\sse coNP$
+\end_inset
+
+ ומסעיף ב' 
+\begin_inset Formula $NP=coNP$
+\end_inset
+
+ כנדרש.
+\end_layout
+
+\begin_layout Subsection*
+סעיףv_3^i ד'
+\end_layout
+
+\begin_layout Enumerate
+
+\bar under
+נכון
+\bar default
+: תהי 
+\begin_inset Formula $L^{\prime}\in NP-complete$
+\end_inset
+
+, אז 
+\begin_inset Formula $L\leq_{p}L^{\prime}$
+\end_inset
+
+.
+ נניח בשלילה 
+\begin_inset Formula $L^{\prime}\in P$
+\end_inset
+
+, אז לפי משפט הרדוקציה הפולינומית 
+\begin_inset Formula $L\in P$
+\end_inset
+
+, בסתירה להנחה.
+ כלומר 
+\begin_inset Formula $L^{\prime}\notin P$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Enumerate
+
+\bar under
+נכון
+\bar default
+: מתקיים 
+\begin_inset Formula $\overline{L}\in coNP$
+\end_inset
+
+.
+ נניח בשלילה 
+\begin_inset Formula $\overline{L}\in P$
+\end_inset
+
+, אז 
+\begin_inset Formula $L\in P$
+\end_inset
+
+ בסתירה להנחה, כלומר 
+\begin_inset Formula $\overline{L}\notin P$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section*
+שאלה
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\end_layout
+
+\begin_layout Standard
+ראינו בתרגול 
+\begin_inset Formula $10$
+\end_inset
+
+ כי 
+\begin_inset Formula $3-COLOR\in NP$
+\end_inset
+
+ )קיים מוודא פולינומי(, נראה כי 
+\begin_inset Formula $3-COLOR\in NP-complete$
+\end_inset
+
+ ע"י רדוקציה מ-
+\begin_inset Formula $3-SAT$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+תהי 
+\begin_inset Formula $\varphi=\left(\ell_{1}^{1}\vee\ell_{2}^{1}\vee\ell_{3}^{1}\right)\wedge\cdots\wedge\left(\ell_{1}^{m}\vee\ell_{2}^{m}\vee\ell_{3}^{m}\right)$
+\end_inset
+
+ נוסחת 
+\begin_inset Formula $3-CNF$
+\end_inset
+
+, ונניח כי המשתנים של 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ הם 
+\begin_inset Formula $X=\left\{ x_{1},\ldots,x_{k}\right\} $
+\end_inset
+
+.
+ לכל 
+\begin_inset Formula $i\in\left[m\right]$
+\end_inset
+
+ נגדיר את הגדג'ט המתאים לפסוקית 
+\begin_inset Formula $\left(\ell_{1}^{i}\vee\ell_{2}^{i}\vee\ell_{3}^{i}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\lang english
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto]
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node[state] (v0) {$v_{out}^i$};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node[state] (v1) [below left=of v0] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node[state] (v2) [below right=of v0] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node[dashed, state] (v3) [below=of v1] {$
+\backslash
+ell_{1}^{i}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node[state] (q0) [below of=v2] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node[state] (q1) [below left=of q0] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node[state] (q2) [below right=of q0] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node[dashed, state] (q3) [below=of q1] {$
+\backslash
+ell_{2}^{i}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node[dashed, state] (q4) [below=of q2] {$
+\backslash
+ell_{3}^{i}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw (v0) -- (v1)
+\end_layout
+
+\begin_layout Plain Layout
+
+         (v0) -- (v2)
+\end_layout
+
+\begin_layout Plain Layout
+
+         (v1) -- (v2)
+\end_layout
+
+\begin_layout Plain Layout
+
+         (v1) -- (v3)
+\end_layout
+
+\begin_layout Plain Layout
+
+         (v2) -- (q0)
+\end_layout
+
+\begin_layout Plain Layout
+
+         (q0) -- (q1)
+\end_layout
+
+\begin_layout Plain Layout
+
+         (q0) -- (q2)
+\end_layout
+
+\begin_layout Plain Layout
+
+         (q1) -- (q2)
+\end_layout
+
+\begin_layout Plain Layout
+
+         (q1) -- (q3)
+\end_layout
+
+\begin_layout Plain Layout
+
+         (q2) -- (q4);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נחשוב על הגדג'ט כמבצע 
+\begin_inset Formula $OR$
+\end_inset
+
+ בין שלושת הליטרלים 
+\begin_inset Formula $\ell_{1}^{i},\ell_{2}^{i},\ell_{3}^{i}$
+\end_inset
+
+.
+ נגדיר בנוסף גדג'ט 
+\begin_inset Formula $pallette$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\lang english
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto]
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node[state] (v1) {$T$};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node[state] (v2) [below left=of v0] {$F$};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node[state] (v3) [below right=of v0] {$S$};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw (v1) -- (v2)
+\end_layout
+
+\begin_layout Plain Layout
+
+         (v1) -- (v3)
+\end_layout
+
+\begin_layout Plain Layout
+
+         (v2) -- (v3);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נבנה גרף 
+\begin_inset Formula $G=\left\langle V,E\right\rangle $
+\end_inset
+
+ שקודקודיו הם קודקודי כל הגדג'טים המוגדרים, וצלעותיו הם:
+\end_layout
+
+\begin_layout Itemize
+כל צלעות הגדג'טים המוגדרים.
+\end_layout
+
+\begin_layout Itemize
+לכל 
+\begin_inset Formula $i\in\left[m\right]$
+\end_inset
+
+ מתקיים 
+\begin_inset Formula $\left\{ v_{1}^{i},F\right\} ,\left\{ v_{1}^{i},S\right\} ,\left\{ v_{4}^{i},F\right\} ,\left\{ v_{4}^{i},S\right\} \in E$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+לכל 
+\begin_inset Formula $\ell_{j}^{i}$
+\end_inset
+
+ מתקיים 
+\begin_inset Formula $\left\{ \ell_{j}^{i},S\right\} \in E$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+לכל 
+\begin_inset Formula $\ell_{i}^{s},\ell_{j}^{r}$
+\end_inset
+
+ עם 
+\begin_inset Formula $s\neq r$
+\end_inset
+
+, אם 
+\begin_inset Formula $\ell_{i}^{s}\neq\neg\ell_{j}^{r}$
+\end_inset
+
+ אז 
+\begin_inset Formula $\left\{ \ell_{i}^{s},\ell_{j}^{r}\right\} \in E$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+נוכיח נכונות.
+ תחילה, נשים לב כי עבור גדג'ט הפסוקית ה-
+\begin_inset Formula $i$
+\end_inset
+
+, אם 
+\begin_inset Formula $v_{i}^{out}$
+\end_inset
+
+ צבוע ב-
+\begin_inset Formula $T$
+\end_inset
+
+ ו-
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+תהי 
+\begin_inset Formula $\varphi\in3-SAT$
+\end_inset
+
+, 
+\begin_inset Formula $\pi$
+\end_inset
+
+ השמה מספקת, נוכיח כי 
+\begin_inset Formula $G$
+\end_inset
+
+ 
+\begin_inset Formula $3$
+\end_inset
+
+-צביע.
+\end_layout
+
+\begin_layout Section*
+שאלה
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+3
+\end_layout
+
+\begin_layout Subsection*
+סעיף א'
+\end_layout
+
+\begin_layout Standard
+נראה כי 
+\begin_inset Formula $SAT^{\geq3}\in NP$
+\end_inset
+
+.
+ נבנה מוודא 
+\begin_inset Formula $V$
+\end_inset
+
+ אשר מקבל זוג 
+\begin_inset Formula $\left\langle \phi,\pi_{1}\#\pi_{2}\#\pi_{3}\right\rangle $
+\end_inset
+
+כאשר 
+\begin_inset Formula $\phi$
+\end_inset
+
+ נוסחה בוליאנית ו-
+\begin_inset Formula $\pi_{1},\pi_{2}\pi_{3}$
+\end_inset
+
+ 
+\begin_inset Formula $3$
+\end_inset
+
+ השמות לנוסחא.
+ 
+\begin_inset Formula $V$
+\end_inset
+
+ מקבלת אם"ם 
+\begin_inset Formula $\phi$
+\end_inset
+
+ מסופקת ע"י כל אחת מההשמות.
+ קל לראות כי הנ"ל נעשה בזמן פולינומי באורך הנוסחא ולכן 
+\begin_inset Formula $V$
+\end_inset
+
+ מוודא פולינומי ו-
+\begin_inset Formula $SAT^{\geq3}\in NP$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+נראה כי 
+\begin_inset Formula $SAT^{\geq3}\in NP-complete$
+\end_inset
+
+ ע"י רדוקציה מ-
+\begin_inset Formula $SAT$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+תהי 
+\begin_inset Formula $\phi$
+\end_inset
+
+ קלט ל-
+\begin_inset Formula $SAT$
+\end_inset
+
+ מעל משתנים 
+\begin_inset Formula $X=\left\{ x_{1},\ldots,x_{k}\right\} $
+\end_inset
+
+.
+ נגדיר זוג משתנים חדשים 
+\begin_inset Formula $y,z\notin X$
+\end_inset
+
+ ונחזיר את הנוסחא
+\begin_inset Formula 
+\[
+\psi:=\left(\phi\wedge y\right)\vee\left(\phi\wedge z\right)
+\]
+
+\end_inset
+
+נוכיח נכונות.
+ נניח 
+\begin_inset Formula $\phi\in SAT$
+\end_inset
+
+, אז קיימת השמה מספקת 
+\begin_inset Formula $\pi=\left(\pi_{1},\ldots,\pi_{k}\right)$
+\end_inset
+
+.
+ נגדיר 
+\begin_inset Formula $3$
+\end_inset
+
+ השמות למשתנים 
+\begin_inset Formula $\left\{ x_{1},\ldots,x_{k},y,z\right\} $
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{eqnarray*}
+\alpha_{1} & = & \left(\pi,T,F\right)\\
+\alpha_{2} & = & \left(\pi,F,T\right)\\
+\alpha_{3} & = & \left(\pi,T,T\right)
+\end{eqnarray*}
+
+\end_inset
+
+מתקיים 
+\begin_inset Formula $\pi\left(\phi\right)=\alpha_{1}\left(\phi\right)=\alpha_{2}\left(\phi\right)=\alpha_{3}\left(\phi\right)=T$
+\end_inset
+
+ כי 
+\begin_inset Formula $\alpha_{1},\alpha_{2},\alpha_{3}$
+\end_inset
+
+ מסכימות עם 
+\begin_inset Formula $\pi$
+\end_inset
+
+ על כל משתני 
+\begin_inset Formula $X$
+\end_inset
+
+.
+ לכן
+\begin_inset Formula 
+\[
+\alpha_{1}\left(\psi\right)=\left(T\wedge T\right)\vee\left(T\wedge F\right)=T
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\alpha_{2}\left(\psi\right)=\left(T\wedge F\right)\vee\left(T\wedge T\right)=T
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\alpha_{3}\left(\psi\right)=\left(T\wedge T\right)\vee\left(T\wedge T\right)=T
+\]
+
+\end_inset
+
+כלומר 
+\begin_inset Formula $\alpha_{1},\alpha_{2},\alpha_{3}$
+\end_inset
+
+ השמות מספקות ל-
+\begin_inset Formula $\psi$
+\end_inset
+
+ ו-
+\begin_inset Formula $\psi\in SAT^{\geq3}$
+\end_inset
+
+ כנדרש.
+\end_layout
+
+\begin_layout Standard
+בכיוון השני, נניח 
+\begin_inset Formula $\psi\in SAT^{\geq3}$
+\end_inset
+
+, אז קיימות 
+\begin_inset Formula $3$
+\end_inset
+
+ השמות מספקות, לכן בפרט קיימת השמה מספקת אחת, נסמנה 
+\begin_inset Formula $\alpha$
+\end_inset
+
+.
+ נניח בשלילה כי 
+\begin_inset Formula $\alpha\left(\phi\right)=F$
+\end_inset
+
+, אז
+\begin_inset Formula 
+\[
+\alpha\left(\psi\right)=\left(F\wedge y\right)\vee\left(F\wedge z\right)=F\vee F=F
+\]
+
+\end_inset
+
+בסתירה לכך ש-
+\begin_inset Formula $\alpha$
+\end_inset
+
+ מספקת את 
+\begin_inset Formula $\psi$
+\end_inset
+
+, לכן 
+\begin_inset Formula $\alpha\left(\phi\right)=T$
+\end_inset
+
+.
+ נגדיר השמה 
+\begin_inset Formula $\pi$
+\end_inset
+
+ המסכימה עם 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ על כל משתני 
+\begin_inset Formula $X$
+\end_inset
+
+, אז 
+\begin_inset Formula $\pi\left(\phi\right)=T$
+\end_inset
+
+ כי לא נגענו בערכי האמת של ההשמה ביחס לנוסחא ולכן 
+\begin_inset Formula $\phi\in SAT$
+\end_inset
+
+ כנדרש.
+\end_layout
+
+\begin_layout Standard
+הרדוקציה ניתנת לחישוב בזמן פולינומי )למעשה לינארי( באורך הנוסחא ע"י בניית
+ 
+\begin_inset Formula $\psi$
+\end_inset
+
+ כמתואר לעיל.
+\end_layout
+
+\begin_layout Subsection*
+סעיף ב'
+\end_layout
+
+\end_body
+\end_document
